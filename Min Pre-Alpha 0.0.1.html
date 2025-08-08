@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>MIN</title>
+</head>
+<body>
+  <h1>Min - ловит даже... да нигде блять не ловит!</h1>
+
+  <p>
+    Зарегистрируйся или войди в один клик через
+    <a href="https://www.gosuslugi.ru/" target="_blank" style="text-decoration: none;">
+     <button type="button">Госуслуги</button>
+    </a>
+  </p>
+
+  <p>Для ананистов:</p>
+
+  <label>ФИО:
+    <input type="text" name="username">
+  </label>
+
+  <label>Серия и номер паспорта:
+    <input type="password" placeholder="1111 123456">
+  </label>
+
+  <button type="button" onclick="показатьОтветИКартинку()">
+    Подтвердить
+  </button>
+
+  <p id="ответ"></p>
+  <div id="картинка" style="margin-top:10px;"></div>
+
+  <script>
+    function показатьОтветИКартинку() {
+      document.getElementById('ответ').innerText = 'Осталось подтвердить, что это вы за устройством! Посмотрите в свою камеру и помахайте. Если у вас нет вебкамеры, то это не беда! Просто проверните эти действия, глядя в своё окно!';
+
+      const imgContainer = document.getElementById('картинка');
+      imgContainer.innerHTML = '';
+
+      setTimeout(() => {
+        const img = document.createElement('img');
+        img.src = 'https://memepedia.ru/wp-content/uploads/2021/04/qblulgcbrwk-%E2%80%94-kopija.jpg';
+        img.alt = 'Пример изображения';
+        img.style.border = '1px solid #ccc';
+        imgContainer.appendChild(img);
+      }, 4000);
+    }
+  </script>
+
+  <a href="https://t.me/min_supp" target="_blank">
+  <button style="position: absolute; top: 10px; right: 10px;">Поддержка</button>
+
+</body>
+</html>
